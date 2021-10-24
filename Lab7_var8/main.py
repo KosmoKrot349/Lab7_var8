@@ -48,13 +48,13 @@ def inputIntoFile():
     if len(pack.dogs)==0:
         messagebox.showinfo("Message", 'pack is empty')
         return
-    pickle.dump(pack,f)
+    pickle.dump(pack.dogs,f)
     f.close()
     messagebox.showinfo("Message", 'inserted into file')
 
 def getFromFile():
     f = open('test.dat', 'rb')
-    pack = pickle.load(f)
+    pack.dogs=pickle.load(f)
     pack.showPack()
     f.close()
     messagebox.showinfo("Message", 'Data got')
